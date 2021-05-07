@@ -4,7 +4,8 @@ import java.util.*;
 public class HorseShoe{
 
     public static void main(String[] args){
-        
+		
+		// to remove dublicates colors
         Set<Integer> shoesSet = new HashSet<>();
         
         Scanner input = new Scanner(System.in);
