@@ -2,14 +2,16 @@ import java.util.*;
 
 class SmallerNumbersThanCurrent {
     public int[] smallerNumbersThanCurrent(int[] nums) {
-        Arrays.sort(nums);
-        List<Integer> arrList = new ArrayList<Integer>();
+        List<Integer> sortedNumslist = Arrays.stream(nums).boxed().collect(Collectors.toList());
+        Collections.sort(sortedNumslist);
         
-        for(int num : nums){
-            arrList.add(Arrays.asList(nums).indexOf(num));
+        List<Integer> numsList = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            numsList.add(sortedNumslist.indexOf(nums[i]));
         }
- 
-        int[] result = arrList.stream().mapToInt(Integer::intValue).toArray();
-        return result;
+        
+        int[] resultArr = numsList.stream().mapToInt(Integer::intValue).toArray();
+
+        return resultArr;
     }
 }
