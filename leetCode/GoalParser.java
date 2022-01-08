@@ -1,5 +1,8 @@
 class GoalParser {
     public String interpret(String command) {
+		
+		// return command.replace("()", "o").replace("(al)", "al");
+		
         StringBuilder commandParser = new StringBuilder();
         
         for(int i = 0; i < command.length(); i++){
@@ -17,6 +20,5 @@ class GoalParser {
         }
         
         return commandParser.toString();
-		// or return command.replace("()", "o").replace("(al)", "al");
     }
 }
