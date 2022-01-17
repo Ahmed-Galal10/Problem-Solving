@@ -10,11 +10,11 @@ class ValidParentheses {
         Stack<Character> bracketStack = new Stack<Character>();
         
         for(int i = 0; i < s.length(); i++){
-            
-            if(bracketsTable.containsKey(s.charAt(i))){
-                int pop = bracketStack.pop();
+            char bracket = s.charAt(i);
+            if(bracketsTable.containsKey(bracket)){
+                char popBracket = bracketStack.empty() ? '#' : bracketStack.pop();
                 
-                if(pop != bracketsTable.get(s.charAt(i))){
+                if(popBracket != bracketsTable.get(bracket)){
                     return false;
                 }
             } else {
